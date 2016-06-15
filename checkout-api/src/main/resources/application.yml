@@ -1,0 +1,64 @@
+############################################################################
+# U S E R - D E F A U L T
+############################################################################
+spring:
+  profiles:
+    active: development
+  jmx:
+    enabled: false
+  data:
+    database: heroku_8v7cpr01
+    mongodb:
+      uri:  mongodb://nhami-app:Beatriz2710@ds045137.mongolab.com:45137/heroku_8v7cpr01
+
+#swagger
+swagger:
+  config:
+    apiInfo:
+      title: Checkout API
+      description: Checkout API.
+      version: 1.0.0 
+      termsOfServiceUrl: Nhami Team
+      contact: dev@nhami.com.br
+      license: https://github.com/nhami-internet/Checkout-api
+      licenseUrl: https://github.com/nhami-internet/user-api
+
+#spring-boot endpoints
+endpoints:
+  enabled: true
+  info:
+    enabled: true
+  health:
+    sensitive: false
+
+#security
+security:
+  basic:
+    enabled: false
+
+
+    
+#server
+server:
+  port: 9001
+
+management:
+  port: 9001
+  address: 127.0.0.1
+  security:
+    enabled: false
+
+
+
+---
+############################################################################
+# D E V E L O P M E N T
+############################################################################
+spring:
+  profiles: development
+  data:
+    database: heroku_8v7cpr01
+    mongodb:
+      uri:  mongodb://nhami-app:Beatriz2710@ds045137.mongolab.com:45137/heroku_8v7cpr01
+
+
