@@ -16,4 +16,24 @@ public class CheckoutItem implements Serializable {
 	@Min(value = 1)
 	private int quantity;
 
+	public final String getSku() {
+		return sku;
+	}
+
+	public final void setSku(String sku) {
+		this.sku = sku;
+	}
+
+	public final int getQuantity() {
+		return quantity;
+	}
+
+	public final void setQuantity(int quantity) {
+		this.quantity = quantity;
+	}
+
+	@Override
+	public String toString() {
+		return "CheckoutItem [sku=" + sku + ", quantity=" + quantity + "]";
+	}
 }
