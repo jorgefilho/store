@@ -27,11 +27,7 @@ endpoints:
     enabled: true
   health:
     sensitive: false
-
-#security
-security:
-  basic:
-    enabled: false
+    
 #server
 server:
   port: 8080
