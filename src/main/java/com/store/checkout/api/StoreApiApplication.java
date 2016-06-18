@@ -9,10 +9,10 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 @SpringBootApplication
 @EnableAutoConfiguration(exclude = {ErrorMvcAutoConfiguration.class})
-public class CheckoutApiApplication {
+public class StoreApiApplication {
 
     public static void main(String[] args) {
-    	Object[] sources = {CheckoutApiApplication.class};
+    	Object[] sources = {StoreApiApplication.class};
         SpringApplication.run(sources, args);
     }
 }
