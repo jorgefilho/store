@@ -1,1 +1,1 @@
-web: java -Dserver.port=$PORT -Dmanagement.port=$PORT  -javaagent:$(find ./store-api/target -name store-api-\*.jar) -jar $(find ./store-api/target -name store-api-\*.jar)
+web: java -Dserver.port=8080 -Dmanagement.port=8080  -javaagent:$(find ./target -name store-api-\*.jar) -jar $(find ./target -name store-api-\*.jar)
