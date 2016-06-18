@@ -10,7 +10,6 @@
 		<config>java:com.store.checkout.api.StoreApiApplication</config>
 	</configs>
 	<autoconfigs>
-		<config>java:com.store.checkout.api.configuration.ActuatorConfiguration</config>
 	</autoconfigs>
 	<configSets>
 	</configSets>
