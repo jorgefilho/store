@@ -1,4 +1,4 @@
-package com.store.checkout.api.domain;
+package com.store.checkout.api.repository.domain;
 
 import java.io.Serializable;
 
@@ -14,6 +14,6 @@ public class PricingRule implements Serializable {
 	@Id
 	private ObjectId id;
 
-	private String type;
-
+	private String sku;
+	
 }

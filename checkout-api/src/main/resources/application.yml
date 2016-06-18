@@ -8,7 +8,9 @@ spring:
     enabled: false
   data:
     mongodb:
+      database: store
       port: 27017
+
 
 #swagger
 swagger:
@@ -34,30 +36,15 @@ endpoints:
 security:
   basic:
     enabled: false
-
-
-    
 #server
 server:
-  port: 9001
+  port: 8080
 
 management:
-  port: 9001
+  port: 8080
   address: 127.0.0.1
   security:
     enabled: false
-
-
-
----
-############################################################################
-# D E V E L O P M E N T
-############################################################################
-spring:
-  profiles: development
-  data:
-    database: heroku_8v7cpr01
-    mongodb:
-      uri:  mongodb://nhami-app:Beatriz2710@ds045137.mongolab.com:45137/heroku_8v7cpr01
+  
 
 

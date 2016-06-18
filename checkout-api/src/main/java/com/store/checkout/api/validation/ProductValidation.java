@@ -12,8 +12,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import com.store.checkout.api.controller.contract.CheckoutItem;
-import com.store.checkout.api.domain.Product;
 import com.store.checkout.api.repository.ProductRepository;
+import com.store.checkout.api.repository.domain.Product;
 
 @Component
 public class ProductValidation {
@@ -22,6 +22,7 @@ public class ProductValidation {
 	private ProductRepository productRepository;
 
 	public Map<String, String> validate(final CheckoutItem item) {
+
 		final Set<ConstraintViolation<CheckoutItem>> itemValidation = buildDefaultValidatorFactory().getValidator()
 				.validate(item);
 
@@ -34,13 +35,11 @@ public class ProductValidation {
 				errors.put("sku", "Product sku not found.");
 			}
 		} else {
-
 			itemValidation.forEach(violation -> {
 				violation.getPropertyPath().forEach(propertyPath -> {
 					errors.put(propertyPath.getName(), violation.getMessage());
 				});
 			});
-
 		}
 		return errors;
 	}

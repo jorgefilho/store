@@ -1,4 +1,4 @@
-package com.store.checkout.api.domain;
+package com.store.checkout.api.repository.domain;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
