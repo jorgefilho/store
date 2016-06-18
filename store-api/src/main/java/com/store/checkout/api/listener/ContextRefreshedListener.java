@@ -15,7 +15,6 @@ public class ContextRefreshedListener implements ApplicationListener<ContextRefr
 
 	@Override
 	public void onApplicationEvent(ContextRefreshedEvent contextRefreshedEvent) {
-		System.out.println("ContextRefreshedEvent");
 		initializeProductDataEvent.setEventFired();
 
 	}
