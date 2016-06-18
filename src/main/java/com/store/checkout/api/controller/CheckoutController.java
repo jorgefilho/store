@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.store.checkout.api.controller.constant.ControllerPath;
+import com.store.checkout.api.controller.constants.ControllerPath;
 import com.store.checkout.api.controller.contract.CheckoutItem;
 import com.store.checkout.api.service.CheckoutService;
 

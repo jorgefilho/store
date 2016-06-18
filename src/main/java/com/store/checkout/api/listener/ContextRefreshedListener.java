@@ -6,6 +6,7 @@ import org.springframework.context.event.ContextRefreshedEvent;
 import org.springframework.stereotype.Component;
 
 import com.store.checkout.api.listener.event.InitializeProductDataEvent;
+import com.store.checkout.api.listener.event.InitializePromotionDataEvent;
 
 @Component
 public class ContextRefreshedListener implements ApplicationListener<ContextRefreshedEvent> {
@@ -13,10 +14,13 @@ public class ContextRefreshedListener implements ApplicationListener<ContextRefr
 	@Autowired
 	private InitializeProductDataEvent initializeProductDataEvent;
 
+	@Autowired
+	private InitializePromotionDataEvent initializePromotionDataEvent;
+
 	@Override
 	public void onApplicationEvent(ContextRefreshedEvent contextRefreshedEvent) {
+
 		initializeProductDataEvent.setEventFired();
-
+		initializePromotionDataEvent.setEventFired();
 	}
-
 }

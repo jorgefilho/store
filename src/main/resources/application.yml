@@ -7,6 +7,31 @@ spring:
     mongodb:
       database: store
       port: 27017
+  session:
+    store-type: redis
+#server
+server:
+  port: 8080
+  session:
+    timeout: 50000
+
+management:
+  port: 8080
+  address: 127.0.0.1
+  security:
+    enabled: false
+
+#spring-boot endpoints
+endpoints:
+  enabled: false
+  info:
+    enabled: false
+  health:
+    sensitive: false
+#security
+security:
+  basic:
+    enabled: false
 
 #swagger
 swagger:
@@ -20,20 +45,3 @@ swagger:
       license: https://github.com/jorgefilho/store
       licenseUrl: https://github.com/jorgefilho/store
 
-#spring-boot endpoints
-endpoints:
-  enabled: true
-  info:
-    enabled: true
-  health:
-    sensitive: false
-    
-#server
-server:
-  port: 8080
-
-management:
-  port: 8080
-  address: 127.0.0.1
-  security:
-    enabled: false

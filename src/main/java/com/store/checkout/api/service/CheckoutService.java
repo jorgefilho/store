@@ -8,6 +8,9 @@ import org.springframework.stereotype.Service;
 import com.store.checkout.api.controller.contract.CheckoutItem;
 import com.store.checkout.api.controller.domain.MessageResponse;
 import com.store.checkout.api.controller.domain.builder.MessageReponseBuilder;
+import com.store.checkout.api.repository.ProductRepository;
+import com.store.checkout.api.repository.domain.Product;
+import com.store.checkout.api.session.domain.ShoppingCart;
 import com.store.checkout.api.validation.ProductValidation;
 
 @Service
@@ -15,6 +18,12 @@ public class CheckoutService {
 
 	@Autowired
 	private ProductValidation productValidation;
+
+	@Autowired
+	private ProductRepository productRepository;
+
+	@Autowired
+	private ShoppingCartService shippingCartService;
 
 	public MessageResponse addItem(final CheckoutItem checkoutItem) {
 
@@ -24,16 +33,16 @@ public class CheckoutService {
 
 		if (errors.isEmpty()) {
 
-			// get Product
+			final Product product = productRepository.findBySku(checkoutItem.getSku());
 
-			// apply promotion
+			final ShoppingCart shoppingCart = shippingCartService.addItem(product);
 
-			// add shipping
+			messageResponseBilder.entity(shoppingCart);
+			messageResponseBilder.addMessage("checkout", "Item added with success!");
 
 		} else {
 			messageResponseBilder.errors(errors);
 		}
-
 		return messageResponseBilder.build();
 	}
 }
