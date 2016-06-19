@@ -35,7 +35,7 @@ public class CheckoutService {
 
 			final Product product = productRepository.findBySku(checkoutItem.getSku());
 
-			final ShoppingCart shoppingCart = shippingCartService.addItem(product);
+			final ShoppingCart shoppingCart = shippingCartService.addItem(product, checkoutItem.getQuantity());
 
 			messageResponseBilder.entity(shoppingCart);
 			messageResponseBilder.addMessage("checkout", "Item added with success!");

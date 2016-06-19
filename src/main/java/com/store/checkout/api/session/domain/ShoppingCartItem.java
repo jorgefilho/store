@@ -9,57 +9,48 @@ public class ShoppingCartItem implements Serializable {
 
 	private String sku;
 
-	private String name;
-
 	private int quantity;
 
-	private BigDecimal originPrice;
+	private BigDecimal unitPrice;
 
-	private BigDecimal finalPrice;
-
-	public String getSku() {
-		return sku;
-	}
+	private BigDecimal totalPrice = BigDecimal.ZERO;
 
 	public void setSku(String sku) {
 		this.sku = sku;
 	}
 
-	public String getName() {
-		return name;
+
+	public void setQuantity(int quantity) {
+		this.quantity = quantity;
 	}
 
-	public void setName(String name) {
-		this.name = name;
+	public void setUnitPrice(BigDecimal unitPrice) {
+		this.unitPrice = unitPrice;
+	}
+
+	public void setTotalPrice(BigDecimal totalPrice) {
+		this.totalPrice = totalPrice;
+	}
+
+	public String getSku() {
+		return sku;
 	}
 
 	public int getQuantity() {
 		return quantity;
 	}
 
-	public void setQuantity(int quantity) {
-		this.quantity = quantity;
+	public BigDecimal getUnitPrice() {
+		return unitPrice;
 	}
 
-	public BigDecimal getOriginPrice() {
-		return originPrice;
-	}
-
-	public void setOriginPrice(BigDecimal originPrice) {
-		this.originPrice = originPrice;
-	}
-
-	public BigDecimal getFinalPrice() {
-		return finalPrice;
-	}
-
-	public void setFinalPrice(BigDecimal finalPrice) {
-		this.finalPrice = finalPrice;
+	public BigDecimal getTotalPrice() {
+		return totalPrice;
 	}
 
 	@Override
 	public String toString() {
-		return "ShoppingCartItem [sku=" + sku + ", name=" + name + ", quantity=" + quantity + ", originPrice="
-				+ originPrice + ", finalPrice=" + finalPrice + "]";
+		return "ShoppingCartItem [sku=" + sku + ", quantity=" + quantity + ", unitPrice=" + unitPrice + ", totalPrice="
+				+ totalPrice + "]";
 	}
 }

@@ -21,11 +21,22 @@ public class Promotion implements Serializable{
 
 	private boolean active;
 
+	private PricingRule pricingRule = null;
+
 	public Promotion(final String sku, final PromotionType type, final int numberOfItems) {
 		this.sku = sku;
 		this.type = type;
 		this.numberOfItems = numberOfItems;
 		this.active = true;
+	}
+
+	public Promotion(final String sku, final PromotionType type, final int numberOfItems,
+			final PricingRule pricingRule) {
+		this.sku = sku;
+		this.type = type;
+		this.numberOfItems = numberOfItems;
+		this.active = true;
+		this.pricingRule = pricingRule;
 	}
 
 	public String getSku() {
@@ -49,9 +60,13 @@ public class Promotion implements Serializable{
 		this.active = active;
 	}
 
+	public PricingRule getPricingRule() {
+		return pricingRule;
+	}
+
 	@Override
 	public String toString() {
 		return "Promotion [sku=" + sku + ", type=" + type + ", numberOfItems=" + numberOfItems + ", active=" + active
-				+ "]";
+				+ ", pricingRule=" + pricingRule + "]";
 	}
 }

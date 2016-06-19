@@ -21,4 +21,8 @@ public class PromotionService {
 	public Promotion getBySku(final String sku) {
 		return promotionRepository.findBySku(sku);
 	}
+
+	public Promotion getActiveBySku(final String sku) {
+		return promotionRepository.findBySku(sku, true);
+	}
 }

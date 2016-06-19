@@ -20,7 +20,7 @@ public class InitializeProductDataEvent {
 	}
 	public void setEventFired() {
 		productRepository.save(new Product("ipd", "Super Ipad", BigDecimal.valueOf(549.99)));
-		productRepository.save(new Product("mpb", "MacBook Pro", BigDecimal.valueOf(1399.99)));
+		productRepository.save(new Product("mbp", "MacBook Pro", BigDecimal.valueOf(1399.99)));
 		productRepository.save(new Product("atv", "Apple TV", BigDecimal.valueOf(109.50)));
 		productRepository.save(new Product("vga", "VGA adapter", BigDecimal.valueOf(30.00)));
 		this.eventFired = true;

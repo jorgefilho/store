@@ -9,4 +9,7 @@ public interface PromotionRepository extends MongoRepository<Promotion, String> 
 
 	@Query("{ 'sku' : ?0 }")
 	Promotion findBySku(String sku);
+
+	@Query("{ 'sku' : ?0 , 'active' : ?1}")
+	Promotion findBySku(String sku, boolean actived);
 }
