@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.store.checkout.api.controller.constants.ControllerPath;
 import com.store.checkout.api.repository.domain.Promotion;
-import com.store.checkout.api.service.PromotionService;
+import com.store.checkout.api.rule.promotion.service.PromotionService;
 
 @RestController
 @RequestMapping(value = ControllerPath.PROMOTION_PATH)

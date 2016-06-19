@@ -10,6 +10,7 @@ import javax.validation.ConstraintViolation;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import org.springframework.util.StringUtils;
 
 import com.store.checkout.api.controller.contract.CheckoutItem;
 import com.store.checkout.api.repository.ProductRepository;
@@ -40,6 +41,22 @@ public class ProductValidation {
 					errors.put(propertyPath.getName(), violation.getMessage());
 				});
 			});
+		}
+		return errors;
+	}
+
+	public Map<String, String> validate(final String sku) {
+
+		final Map<String, String> errors = new HashMap<String, String>();
+
+		if (!StringUtils.isEmpty(sku)) {
+
+			final Product productFound = productRepository.findBySku(sku);
+			if (productFound == null) {
+				errors.put("sku", "Product sku not found.");
+			}
+		} else {
+			errors.put("sku", "Product sku invalid.");
 		}
 		return errors;
 	}

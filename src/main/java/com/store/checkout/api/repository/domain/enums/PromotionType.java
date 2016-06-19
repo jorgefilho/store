@@ -1,8 +1,8 @@
 package com.store.checkout.api.repository.domain.enums;
 
-import static com.store.checkout.api.service.promotion.constants.BeanName.BY_ONE_GET_ONE_BEAN;
-import static com.store.checkout.api.service.promotion.constants.BeanName.ONE_ITEM_FREE_BEAN;
-import static com.store.checkout.api.service.promotion.constants.BeanName.PRICE_DISCOUNT_BEAN;
+import static com.store.checkout.api.rule.promotion.constants.BeanName.BY_ONE_GET_ONE_BEAN;
+import static com.store.checkout.api.rule.promotion.constants.BeanName.ONE_ITEM_FREE_BEAN;
+import static com.store.checkout.api.rule.promotion.constants.BeanName.PRICE_DISCOUNT_BEAN;
 
 public enum PromotionType {
 	BY_ONE_GET_ONE(BY_ONE_GET_ONE_BEAN), 
