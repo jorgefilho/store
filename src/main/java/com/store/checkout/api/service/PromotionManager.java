@@ -22,12 +22,14 @@ public class PromotionManager {
 	public List<ShoppingCartItem> apply(final ShoppingCartItem shoppingCartItem) {
 		final List<ShoppingCartItem> items = new ArrayList<>();
 
-		final Promotion promotion = promotionService.getActiveBySku(shoppingCartItem.getSku());
-		
-		if (promotion != null) {
-			items.addAll(pricingRuleFactory.apply(promotion, shoppingCartItem));
-		} else {
-			items.add(shoppingCartItem);
+		if (shoppingCartItem != null) {
+			final Promotion promotion = promotionService.getActiveBySku(shoppingCartItem.getSku());
+
+			if (promotion != null) {
+				items.addAll(pricingRuleFactory.apply(promotion, shoppingCartItem));
+			} else {
+				items.add(shoppingCartItem);
+			}
 		}
 		return items;
 	}

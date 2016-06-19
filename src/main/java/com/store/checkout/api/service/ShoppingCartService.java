@@ -19,7 +19,6 @@ public class ShoppingCartService {
 	@Autowired
 	private PromotionManager promotionManager;
 
-
 	public ShoppingCart addItem(final Product product, final int quantity) {
 
 		ShoppingCartItem item = shoppingCart.getItem(product.getSku());
@@ -39,5 +38,10 @@ public class ShoppingCartService {
 		});
 
 		return shoppingCart;
+	}
+
+	public ShoppingCart removeItem(final String sku) {
+		final ShoppingCartItem item = shoppingCart.getItem(sku);
+		return shoppingCart.removeItem(item);
 	}
 }

@@ -3,6 +3,7 @@ package com.store.checkout.api.repository.domain;
 import java.io.Serializable;
 
 import org.springframework.data.annotation.Id;
+import org.springframework.data.annotation.PersistenceConstructor;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import com.store.checkout.api.repository.domain.enums.PromotionType;
@@ -23,6 +24,7 @@ public class Promotion implements Serializable{
 
 	private PricingRule pricingRule = null;
 
+	@PersistenceConstructor
 	public Promotion(final String sku, final PromotionType type, final int numberOfItems) {
 		this.sku = sku;
 		this.type = type;

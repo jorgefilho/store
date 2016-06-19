@@ -11,6 +11,10 @@ public class PricingRule implements Serializable {
 
 	private BigDecimal discount;
 
+	public PricingRule() {
+
+	}
+
 	public PricingRule(String sku) {
 		this.sku = sku;
 	}

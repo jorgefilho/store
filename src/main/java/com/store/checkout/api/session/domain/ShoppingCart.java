@@ -25,18 +25,20 @@ public class ShoppingCart implements Serializable {
 		total.add(item.getTotalPrice());
 	}
 
-	public void removeItem(final ShoppingCartItem item) {
+	public ShoppingCart removeItem(final ShoppingCartItem item) {
 		items.remove(item);
 		total.subtract(item.getTotalPrice());
+		return this;
 	}
 
 	public BigDecimal getTotal() {
 		return total;
 	}
 
-	public void removeAllItems() {
+	public ShoppingCart removeAllItems() {
 		items.clear();
 		total = BigDecimal.ZERO;
+		return this;
 	}
 
 	public ShoppingCartItem getItem(final String sku) {
