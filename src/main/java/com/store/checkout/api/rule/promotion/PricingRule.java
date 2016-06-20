@@ -5,6 +5,6 @@ import java.util.List;
 import com.store.checkout.api.repository.domain.Promotion;
 import com.store.checkout.api.service.shoppingcart.domain.ShoppingCartItem;
 
-public interface Rule {
+public interface PricingRule {
 	List<ShoppingCartItem> apply(Promotion promotion, ShoppingCartItem shoppingCartItem);
 }

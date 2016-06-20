@@ -1,4 +1,4 @@
-package com.store.checkout.api.service.shoppingcart.builder;
+package com.store.checkout.api.builder;
 
 import java.math.BigDecimal;
 

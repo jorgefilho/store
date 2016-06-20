@@ -6,8 +6,6 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.annotation.PersistenceConstructor;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-import com.store.checkout.api.repository.domain.enums.PromotionType;
-
 @Document
 public class Promotion implements Serializable{
 
@@ -16,7 +14,7 @@ public class Promotion implements Serializable{
 	@Id
 	private String sku;
 
-	private PromotionType type;
+	private String type;
 
 	private int numberOfItems;
 
@@ -25,14 +23,14 @@ public class Promotion implements Serializable{
 	private PricingRule pricingRule = null;
 
 	@PersistenceConstructor
-	public Promotion(final String sku, final PromotionType type, final int numberOfItems) {
+	public Promotion(final String sku, final String type, final int numberOfItems) {
 		this.sku = sku;
 		this.type = type;
 		this.numberOfItems = numberOfItems;
 		this.active = true;
 	}
 
-	public Promotion(final String sku, final PromotionType type, final int numberOfItems,
+	public Promotion(final String sku, final String type, final int numberOfItems,
 			final PricingRule pricingRule) {
 		this.sku = sku;
 		this.type = type;
@@ -45,7 +43,7 @@ public class Promotion implements Serializable{
 		return sku;
 	}
 
-	public PromotionType getType() {
+	public String getType() {
 		return type;
 	}
 

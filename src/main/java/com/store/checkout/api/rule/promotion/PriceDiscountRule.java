@@ -10,7 +10,7 @@ import com.store.checkout.api.repository.domain.Promotion;
 import com.store.checkout.api.service.shoppingcart.domain.ShoppingCartItem;
 
 @Service
-public class PriceDiscountRule implements Rule {
+public class PriceDiscountRule implements PricingRule {
 
 	@Override
 	public List<ShoppingCartItem> apply(final Promotion promotion, final ShoppingCartItem shoppingCartItem) {

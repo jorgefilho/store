@@ -1,8 +1,8 @@
 package com.store.checkout.api.listener.event;
 
-import static com.store.checkout.api.repository.domain.enums.PromotionType.BY_ONE_GET_ONE;
-import static com.store.checkout.api.repository.domain.enums.PromotionType.ONE_ITEM_FREE;
-import static com.store.checkout.api.repository.domain.enums.PromotionType.PRICE_DISCOUNT;
+import static com.store.checkout.api.rule.promotion.constants.BeanName.BY_ONE_GET_ONE;
+import static com.store.checkout.api.rule.promotion.constants.BeanName.ONE_ITEM_FREE;
+import static com.store.checkout.api.rule.promotion.constants.BeanName.PRICE_DISCOUNT;
 
 import java.math.BigDecimal;
 

@@ -68,10 +68,10 @@ public class CheckoutService {
 	public MessageResponse getItems() {
 		final MessageReponseBuilder messageResponseBilder = new MessageReponseBuilder();
 
-		final ShoppingCart shoppingCart = shippingCartService.removeAllItems();
+		final ShoppingCart shoppingCart = shippingCartService.getShoppinCart();
 
 		messageResponseBilder.entity(new Cart(shoppingCart.getItems(), shoppingCart.getTotal()));
-		messageResponseBilder.addMessage("checkout", "All items removed with success!");
+		messageResponseBilder.addMessage("checkout", "List items with success!");
 
 		return messageResponseBilder.build();
 	}

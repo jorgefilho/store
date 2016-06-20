@@ -1,6 +1,6 @@
 package com.store.checkout.api.rule.promotion;
 
-import static com.store.checkout.api.repository.domain.enums.PromotionType.ONE_ITEM_FREE;
+import static com.store.checkout.api.rule.promotion.constants.BeanName.ONE_ITEM_FREE;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
@@ -12,10 +12,9 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 
+import com.store.checkout.api.builder.PromotionBuilder;
+import com.store.checkout.api.builder.ShoppingCartItemBuilder;
 import com.store.checkout.api.repository.domain.Promotion;
-import com.store.checkout.api.rule.promotion.OneItemFreeRule;
-import com.store.checkout.api.rule.promotion.builder.PromotionBuilder;
-import com.store.checkout.api.service.shoppingcart.builder.ShoppingCartItemBuilder;
 import com.store.checkout.api.service.shoppingcart.domain.ShoppingCartItem;
 
 @RunWith(JUnit4.class)

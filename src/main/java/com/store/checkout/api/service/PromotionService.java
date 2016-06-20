@@ -1,4 +1,4 @@
-package com.store.checkout.api.rule.promotion.service;
+package com.store.checkout.api.service;
 
 import java.util.List;
 

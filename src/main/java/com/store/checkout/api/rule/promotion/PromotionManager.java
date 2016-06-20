@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component;
 
 import com.store.checkout.api.repository.domain.Promotion;
 import com.store.checkout.api.rule.promotion.factory.PricingRuleFactory;
-import com.store.checkout.api.rule.promotion.service.PromotionService;
+import com.store.checkout.api.service.PromotionService;
 import com.store.checkout.api.service.shoppingcart.domain.ShoppingCartItem;
 
 @Component

@@ -16,8 +16,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.web.WebAppConfiguration;
 
 import com.store.checkout.api.StoreApiApplication;
-import com.store.checkout.api.rule.promotion.PromotionManager;
-import com.store.checkout.api.service.shoppingcart.builder.ShoppingCartItemBuilder;
+import com.store.checkout.api.builder.ShoppingCartItemBuilder;
 import com.store.checkout.api.service.shoppingcart.domain.ShoppingCartItem;
 
 @RunWith(SpringJUnit4ClassRunner.class)
@@ -52,11 +51,15 @@ public class PromotionManagerTests {
 		final ShoppingCartItem shoppingCartItem = getShoppingCartItemToRuleBuyOneGetOne();
 
 		final List<ShoppingCartItem> items = promotionManager.apply(shoppingCartItem);
+
+		assertNotNull(items);
+		assertFalse(items.isEmpty());
+		assertEquals(2, items.size());
+
 	}
 
 	private ShoppingCartItem getShoppingCartItemToRuleBuyOneGetOne() {
 		return new ShoppingCartItemBuilder().sku("mbp").quantity(1).unitPrice(BigDecimal.valueOf(1399.99))
 				.totalPrice(BigDecimal.valueOf(1399.99).multiply(new BigDecimal(1))).build();
 	}
-
 }

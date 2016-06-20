@@ -1,14 +1,13 @@
-package com.store.checkout.api.rule.promotion.builder;
+package com.store.checkout.api.builder;
 
 import com.store.checkout.api.repository.domain.PricingRule;
 import com.store.checkout.api.repository.domain.Promotion;
-import com.store.checkout.api.repository.domain.enums.PromotionType;
 
 public class PromotionBuilder {
 
 	private String sku;
 
-	private PromotionType type;
+	private String type;
 	
 	private int numberOfItems;
 	
@@ -19,7 +18,7 @@ public class PromotionBuilder {
 		return this;
 	}
 
-	public PromotionBuilder type(final PromotionType type) {
+	public PromotionBuilder type(final String type) {
 		this.type = type;
 		return this;
 	}

@@ -10,7 +10,7 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.stereotype.Component;
 
 import com.store.checkout.api.repository.domain.Promotion;
-import com.store.checkout.api.rule.promotion.Rule;
+import com.store.checkout.api.rule.promotion.PricingRule;
 import com.store.checkout.api.service.shoppingcart.domain.ShoppingCartItem;
 
 @Component
@@ -24,13 +24,10 @@ public class PricingRuleFactory {
 	public List<ShoppingCartItem> apply(final Promotion promotion, final ShoppingCartItem shoppingCartItem) {
 		final List<ShoppingCartItem> items = new ArrayList<>();
 		try{
-			final Rule service = (Rule) context.getBean(promotion.getType().getBeanName());
-			if (service == null) {
-				items.add(shoppingCartItem);
-			} else {
-				items.addAll(service.apply(promotion, shoppingCartItem));
-			}
+			final PricingRule pricingRule = (PricingRule) context.getBean(promotion.getType());
+			items.addAll(pricingRule.apply(promotion, shoppingCartItem));
 		}catch (Exception e){
+			items.add(shoppingCartItem);
 			LOGGER.error("Pricing Rule Factory tried to call a Rule Service Undefined: {}", e.getMessage() );
 		}
 		return items;
